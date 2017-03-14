@@ -1,0 +1,25 @@
+{
+  "name": "goblog",
+  "version": "1.0.0",
+  "description": "blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/go3three/goBlog.git"
+  },
+  "keywords": [
+    "blog",
+    "blog",
+    "blog",
+    "blog"
+  ],
+  "author": "Ghada , Mohammed , Akram",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/go3three/goBlog/issues"
+  },
+  "homepage": "https://github.com/go3three/goBlog#readme"
+}
