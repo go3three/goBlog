@@ -1,6 +1,26 @@
 'use strict';
-const route = require('./route.js');
-
-module.exports=(req,res)=> {
-  route(req,res);
-}
+const Hapi = require('hapi');
+const server = new Hapi.Server();
+server.connection({
+    port: process.env.PORT || 3000
+});
+server.route({
+    method: 'GET',
+    path: '/',
+    handler: function(request, reply) {
+        reply('Hello, world!');
+    }
+});
+server.route({
+    method: 'GET',
+    path: '/{name}',
+    handler: function(request, reply) {
+        reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
+    }
+});
+server.start((err) => {
+    if (err) {
+        throw err;
+    }
+    console.log(`Server running at: ${server.info.uri}`);
+});
