@@ -1,3 +1,6 @@
 'use strict';
 const route = require('./route.js');
-route();
+
+module.exports=(req,res)=> {
+  route(req,res);
+}
