@@ -4,12 +4,17 @@
   "description": "blog",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "npm run db:create && npm run migrate && node ./tests/runner.js && npm run db:drop",
+    "start": "node index.js",
+    "db:create": "psql -c 'CREATE DATABASE test;' -U postgres -h localhost",
+    "db:drop": "psql -c 'DROP DATABASE test;' -U postgres -h localhost",
+    "migrate": "node scripts/migrate.js",
+    "cov": "npm run db:create && npm run migrate && node_modules/.bin/istanbul cover ./tests/runner.js && npm run db:drop",
+    "dev:test": "nodemon ./tests/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/go3three/goBlog.git"
+    "url": "https://github.com/go3three/goBlog.git"
   },
   "keywords": [
     "blog",
@@ -24,7 +29,17 @@
   },
   "homepage": "https://github.com/go3three/goBlog#readme",
   "dependencies": {
-    "hapi": "^16.1.0"
+    "env2": "^2.1.1",
+    "handlebars": "^4.0.6",
+    "hapi": "^16.1.0",
+    "hapi-postgres-connection": "^6.1.0",
+    "hoek": "^4.1.0",
+    "inert": "^4.1.0",
+    "istanbul": "^0.4.5",
+    "joi": "^10.2.2",
+    "pg": "^6.1.4",
+    "url-parse": "^1.1.8",
+    "vision": "^4.1.1"
   },
   "devDependencies": {}
 }
