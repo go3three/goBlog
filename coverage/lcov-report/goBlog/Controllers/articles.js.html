@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for goBlog/Controllers/articles.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">goBlog/Controllers/</a> articles.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.86% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>5/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.86% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/28</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const Hoek = require('hoek'); // show errors in console without killing app
+const db = require('../config/conn.js');
+&nbsp;
+<span class="fstat-no" title="function not covered" >function insertData(req, res) {</span>
+<span class="cstat-no" title="statement not covered" >    const client = db.createClient(db.config);</span>
+<span class="cstat-no" title="statement not covered" >    const title = req.payload.title;</span>
+<span class="cstat-no" title="statement not covered" >    const category_id = req.payload.category_id;</span>
+<span class="cstat-no" title="statement not covered" >    const summary = req.payload.summary;</span>
+<span class="cstat-no" title="statement not covered" >    const details = req.payload.details;</span>
+<span class="cstat-no" title="statement not covered" >    const image = req.payload.image;</span>
+<span class="cstat-no" title="statement not covered" >    const active = req.payload.active;</span>
+<span class="cstat-no" title="statement not covered" >    const user_id = 1;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    const select = `SELECT * FROM article WHERE (title = ${title}) AND user_id =${user_id};`;</span>
+<span class="cstat-no" title="statement not covered" >    db.selectdata(client, select, <span class="fstat-no" title="function not covered" >function(err, result) {</span></span>
+<span class="cstat-no" title="statement not covered" >      const d= new Date();</span>
+<span class="cstat-no" title="statement not covered" >      const created_at = d.toDateString();</span>
+<span class="cstat-no" title="statement not covered" >        if (err || result.rowCount === 0) {</span>
+<span class="cstat-no" title="statement not covered" >            var q = `INSERT INTO article</span>
+           (title,uid,category_id,summary,details,image,active,isdelete,created_at,updated_at,updated_by,deleted_by)
+           VALUES
+           ('${title}','${user_id}','${category_id}','${summary}','${details}','${image}','${active}',0,'${created_at}',NULL,NULL,NULL);`;
+<span class="cstat-no" title="statement not covered" >            db.insertdata(client, q, <span class="fstat-no" title="function not covered" >function(err, result) {</span></span>
+<span class="cstat-no" title="statement not covered" >                Hoek.assert(!err, 'ERROR: inserting data into Postgres', err);</span>
+<span class="cstat-no" title="statement not covered" >                return res.view('CreateArticle', {</span>
+                    title: 'DisplayArticles',
+                    subtitle: 'Display Articles',
+                    info: 'You Can Display and Edit Articles',
+                    msg: "Article Added Successfully" // escaped above
+                });
+            });
+        } else {
+<span class="cstat-no" title="statement not covered" >            return res.view('CreateArticle', {</span>
+                title: 'DisplayArticles',
+                subtitle: 'Display Articles',
+                info: 'You Can Display and Edit Articles',
+                msg: 'Sorry, The Article is Duplicated !'
+            }).code(400);
+        }
+    })
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function SelectData(req, res) {</span>
+<span class="cstat-no" title="statement not covered" >    const client = db.createClient(db.config);</span>
+<span class="cstat-no" title="statement not covered" >    const select = `SELECT * FROM article WHERE uid=1 `;</span>
+<span class="cstat-no" title="statement not covered" >    db.selectdata(client, select, <span class="fstat-no" title="function not covered" >function(err, result) {</span></span>
+<span class="cstat-no" title="statement not covered" >        Hoek.assert(!err, 'ERROR: inserting data into Postgres', err);</span>
+<span class="cstat-no" title="statement not covered" >        return res.view('DisplayArticles', {</span>
+            title: 'DisplayArticles',
+            subtitle: 'Display Articles',
+            info: 'You Can Display and Edit Articles',
+            result: result.rows // escaped above
+        });
+    });
+}
+module.exports = {
+    insertData: insertData,
+    SelectData:SelectData
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Mar 15 2017 12:30:48 GMT+0200 (EET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
