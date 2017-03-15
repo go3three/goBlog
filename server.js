@@ -1,9 +1,9 @@
 'use strict';
 const Hapi = require('hapi');
-require('env2')('./.env');    // loads all entries into process.env
+// require('env2')('./.env');    // loads all entries into process.env
 const handlebars = require('handlebars');
 const vision = require('vision');
-const pg = require('hapi-postgres-connection');
+// const pg = require('hapi-postgres-connection');
 const server = new Hapi.Server();
 server.connection({
     port: process.env.PORT || 3000
@@ -13,11 +13,11 @@ server.register(vision, (err) => {
         throw err
     }
 });
-server.register(pg, (err) => {
-    if (err) {
-        throw err
-    }
-});
+// server.register(pg, (err) => {
+//     if (err) {
+//         throw err
+//     }
+// });
 server.on('response', function (request) {
     console.log(request.info.remoteAddress + ': ' + request.method.toUpperCase() + ' ' + request.url.path + ' --> ' + request.response.statusCode);
 });

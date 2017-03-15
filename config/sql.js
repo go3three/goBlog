@@ -15,7 +15,7 @@ module.exports = {
     category_id int,
     summary varchar(250),
     details text,
-    image varchar(50),
+    image varchar(250),
     active int,
     isdelete int,
     created_at VARCHAR(50),

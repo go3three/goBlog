@@ -1,4 +1,5 @@
-  'use strict';
+'use strict';
+
 const server = require('./server.js');
 const Path = require('path');
 const Hoek = require('hoek');
@@ -7,8 +8,8 @@ const inert = require('inert');
 const article = require('./Controllers/articles.js');
 module.exports=function(request,reply){
   server.register({
-  register:inert
-}, function(err) {
+    register:inert
+  }, function(err) {
   if (err) throw err
 
   server.route({

@@ -18,8 +18,8 @@ function insertData(req, res) {
         if (err || result.rowCount === 0) {
             var q = `INSERT INTO article
            (title,uid,category_id,summary,details,image,active,isdelete,created_at,updated_at,updated_by,deleted_by)
-           values
-           ('${title}',${user_id},${category_id},'${summary}','${details}','${image}','${active}',0,'${created_at}',NULL,NULL,NULL);`;
+           VALUES
+           ('${title}','${user_id}','${category_id}','${summary}','${details}','${image}','${active}',0,'${created_at}',NULL,NULL,NULL);`;
             db.insertdata(client, q, function(err, result) {
                 Hoek.assert(!err, 'ERROR: inserting data into Postgres', err);
                 return res.view('CreateArticle', {

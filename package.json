@@ -41,5 +41,9 @@
     "url-parse": "^1.1.8",
     "vision": "^4.1.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "codeclimate-test-reporter": "^0.4.1",
+    "shot": "^3.4.0",
+    "tape": "^4.6.3"
+  }
 }
