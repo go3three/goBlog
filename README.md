@@ -55,3 +55,10 @@ For a user looking for a blog design with CMS.
 ![alt text](http://imgh.us/4_2162.jpg)
 
 #### Organizing the code
+
+  * Files structure
+  * Code structure
+
+#### Tests
+
+Following the TDD approach, test cases were conducted to make sure back-end, front-end, database functionality is authentic and easily maintained.
