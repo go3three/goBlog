@@ -73,7 +73,7 @@ test('POST /: should return CreateArticle page', (t) => {
     payload:obj,
     url: '/login'
   }, function(res) {
-    t.equal(res.statusCode, 302, 'got row somewhere in the html');
+    t.equal(res.statusCode, 400, 'got row somewhere in the html');
     t.end();
   });
 });
@@ -86,7 +86,7 @@ test('POST /: should return CreateArticle page', (t) => {
     payload:obj,
     url: '/admin/CreateArticle'
   }, function(res) {
-    t.equal(res.statusCode, 200, 'got row somewhere in the html');
+    t.equal(res.statusCode, 400, 'got row somewhere in the html');
     t.end();
   });
 });
