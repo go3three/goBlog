@@ -1,7 +1,10 @@
 # goBlog
 Heroku link is [here](https://go3blog.herokuapp.com)
 
-![Heroku](https://heroku-badge.herokuapp.com/?app=go3blog) [![Build Status](https://travis-ci.org/go3three/goBlog.svg?branch=master)](https://travis-ci.org/go3three/goBlog) [![Code Climate](https://codeclimate.com/github/AkramBadah/goblog/badges/gpa.svg)](https://codeclimate.com/github/AkramBadah/goblog) [![Test Coverage](https://codeclimate.com/github/AkramBadah/goblog/badges/coverage.svg)](https://codeclimate.com/github/AkramBadah/goblog/coverage)
+![Heroku](https://heroku-badge.herokuapp.com/?app=go3blog) [![Build Status](https://travis-ci.org/go3three/goBlog.svg?branch=master)](https://travis-ci.org/go3three/goBlog) [![Code Climate](https://codeclimate.com/github/AkramBadah/goblog/badges/gpa.svg)](https://codeclimate.com/github/AkramBadah/goblog)
+[![Test Coverage](https://codeclimate.com/github/go3three/goBlog/badges/coverage.svg)](https://codeclimate.com/github/go3three/goBlog/coverage)
+
+
 
 ![alt text](http://imgh.us/2_2903.jpg)
 
