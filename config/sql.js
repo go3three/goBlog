@@ -14,7 +14,7 @@ module.exports = {
     title VARCHAR(250),
     uid int,
     category_id int ,
-    summary varchar(250),
+    summary text,
     details text,
     image varchar(250),
     active int DEFAULT 0,
