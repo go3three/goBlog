@@ -2,7 +2,7 @@
 var pg = require('pg');
 var URL = require('url-parse');
 const sqlQueries = require('./sql.js');
-var url = new URL(process.env.DATABASE_URL || 'postgres://postgres:330167@localhost:5432/test');
+var url = new URL(process.env.DATABASE_URL || 'postgres://postgres:482106@localhost:5432/test');
 var config = {
     user: url.username,
     database: url.pathname.split('/')[1],

@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">52.63% </span>
+        <span class="strong">77.27% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>10/19</span>
+        <span class='fraction'>17/22</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>3/6</span>
+        <span class='fraction'>4/6</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">52.63% </span>
+        <span class="strong">77.27% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>10/19</span>
+        <span class='fraction'>17/22</span>
       </div>
     </div>
   </div>
@@ -88,7 +88,12 @@
 43
 44
 45
-46</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+46
+47
+48
+49
+50
+51</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -101,17 +106,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -120,13 +137,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -137,7 +147,7 @@
 var pg = require('pg');
 var URL = require('url-parse');
 const sqlQueries = require('./sql.js');
-var url = new URL(process.env.DATABASE_URL || 'postgres://postgres:330167@localhost:5432/test');
+var url = new URL(process.env.DATABASE_URL || 'postgres://postgres:482106@localhost:5432/test');
 var config = {
     user: url.username,
     database: url.pathname.split('/')[1],
@@ -149,13 +159,13 @@ var config = {
     ssl: process.env.DATABASE_URL ? <span class="branch-0 cbranch-no" title="branch not covered" >true </span>: false
 };
 var createClient = (config, cb) =&gt; {
-<span class="cstat-no" title="statement not covered" >    var client = new pg.Client(config);</span>
-<span class="cstat-no" title="statement not covered" >    client.connect(err =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+    var client = new pg.Client(config);
+    client.connect(err =&gt; {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (err) {
 <span class="cstat-no" title="statement not covered" >            throw err;</span>
         }
     });
-<span class="cstat-no" title="statement not covered" >    return client;</span>
+    return client;
 };
 &nbsp;
 var createTable = (client, cb) =&gt; {
@@ -165,10 +175,14 @@ var createTable = (client, cb) =&gt; {
 &nbsp;
 var selectdata = (client, query, cb) =&gt; {
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    client.query(query, cb);</span>
+    client.query(query, cb);
 };
 var insertdata = (client, data, cb) =&gt; {
-<span class="cstat-no" title="statement not covered" >    client.query(data, cb);</span>
+    client.query(data, cb);
+};
+var insertadmin = (client, cb) =&gt; {
+<span class="cstat-no" title="statement not covered" >  var finalQuery = `${sqlQueries.inser_admin}`;</span>
+<span class="cstat-no" title="statement not covered" >    client.query(finalQuery, cb);</span>
 };
 &nbsp;
 module.exports = {
@@ -176,7 +190,8 @@ module.exports = {
     createClient: createClient,
     createTable: createTable,
     insertdata: insertdata,
-    selectdata: selectdata
+    selectdata: selectdata,
+    insertadmin:insertadmin
 };
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -184,7 +199,7 @@ module.exports = {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Mar 15 2017 12:45:00 GMT+0200 (EET)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Mar 16 2017 10:37:24 GMT+0200 (EET)
 </div>
 </div>
 <script src="../../prettify.js"></script>

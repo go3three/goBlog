@@ -66,7 +66,7 @@ function DeleteData(req, res) {
         req.yar.set('msg', {
             msg: 'Article Delete Successfully'
         });
-        return res.redirect('/DisplayArticles');
+        return res.redirect('/admin/DisplayArticles');
     });
 }
 module.exports = {

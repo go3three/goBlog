@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">73.68% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>14/19</span>
+        <span class='fraction'>25/25</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/4</span>
+        <span class='fraction'>7/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">73.68% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>14/19</span>
+        <span class='fraction'>25/25</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -115,68 +115,35 @@
 70
 71
 72
-73</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -187,85 +154,166 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
-&nbsp;
-const server = require('./server.js');
-const Path = require('path');
-const Hoek = require('hoek');
-const handlebars = require('handlebars');
-const inert = require('inert');
-const article = require('./Controllers/articles.js');
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-var getassets = {
-    method: 'GET',
-    path: '/assets/{file*}',
-    handler: {
-      directory: {
-        path: 'public/assets/'
-      }
-    }
-}
-&nbsp;
-&nbsp;
-var gethome = {
-    method: 'GET',
-    path: '/',
-    handler: function(request, reply) {
-      const data ={
-        title:'Main Page'
-      }
-        reply.view("main",data);
-    }
-}
-var getcreatearticle = {
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">  'use strict';
+  const server = require('./server.js');
+  const Path = require('path');
+  const Hoek = require('hoek');
+  const handlebars = require('handlebars');
+  const article = require('./Controllers/articles.js');
+  const main = require('./Controllers/main.js');
+  const files = {
       method: 'GET',
-      path: '/CreateArticle',
-      handler: <span class="fstat-no" title="function not covered" >function(request, reply) {</span>
-<span class="cstat-no" title="statement not covered" >        const data ={</span>
-          title:'CreateArticle',
-          subtitle:'Create Article',
-          info:'You Can Add Articles'
-        }
-<span class="cstat-no" title="statement not covered" >        reply.view("CreateArticle",data);</span>
+      path: '/assets/{file*}',
+      handler: {
+          directory: {
+              path: 'public/assets/'
+          }
       }
-}
-var postcreatearticle = {
+  }
+  const images = {
+      method: 'GET',
+      path: '/images/{file*}',
+      handler: {
+          directory: {
+              path: 'public/assets/images'
+          }
+      }
+  }
+&nbsp;
+&nbsp;
+  const home = {
+      method: 'GET',
+      path: '/',
+      handler: function(request, reply) {
+          main.SelectData(request, reply);
+      }
+  }
+  const login = {
       method: 'POST',
-      path: '/CreateArticle',
-      handler: <span class="fstat-no" title="function not covered" >function(request, reply) {</span>
-<span class="cstat-no" title="statement not covered" >        const data ={</span>
-          title:'CreateArticle',
-          subtitle:'Create Article',
-          info:'You Can Add Articles'
-        }
-<span class="cstat-no" title="statement not covered" >        article.insertData(request,reply);</span>
+      path: '/login',
+      handler: function(request, reply) {
+          main.login(request, reply);
       }
-}
-var getdisplayarticle = {
+  }
+  const articleid = {
       method: 'GET',
-      path: '/DisplayArticles',
-      handler: <span class="fstat-no" title="function not covered" >function(request, reply) {</span>
-<span class="cstat-no" title="statement not covered" >        article.SelectData(request,reply);</span>
+      path: '/article/{id}',
+      handler: function(request, reply) {
+          main.article(request, reply);
       }
-}
+  }
 &nbsp;
-module.exports = [
-  getassets,
-  gethome,
-  getcreatearticle,
-  postcreatearticle,
-  getdisplayarticle
-];
+  const CreatearticleGET = {
+      method: 'GET',
+      path: '/admin/CreateArticle',
+      handler: function(request, reply) {
+          const data = {
+              title: 'CreateArticle',
+              subtitle: 'Create Article',
+              info: 'You Can Add Articles'
+          }
+          reply.view("CreateArticle", data);
+      }
+  }
+  const CreateArticlePOST = {
+      method: 'POST',
+      path: '/admin/CreateArticle',
+      handler: function(request, reply) {
+          const data = {
+              title: 'CreateArticle',
+              subtitle: 'Create Article',
+              info: 'You Can Add Articles'
+          }
+          article.insertData(request, reply);
+      }
+  }
+  const ArticleDelete = {
+      method: 'GET',
+      path: '/admin/Article/delete/{id}',
+      handler: function(request, reply) {
+          article.DeleteData(request, reply);
+      }
+  }
+  const DisplayArticles = {
+      method: 'GET',
+      path: '/admin/DisplayArticles',
+      handler: function(request, reply) {
+          article.SelectData(request, reply);
+      }
+  }
+  module.exports = [files, images, home, login, articleid, CreatearticleGET, CreateArticlePOST, ArticleDelete, DisplayArticles]
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Mar 15 2017 12:45:00 GMT+0200 (EET)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Mar 16 2017 10:37:24 GMT+0200 (EET)
 </div>
 </div>
 <script src="../prettify.js"></script>

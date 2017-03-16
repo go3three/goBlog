@@ -4,7 +4,6 @@ const Hapi = require('hapi');
 const handlebars = require('handlebars');
 const vision = require('vision');
 const inert = require('inert');
-const pg = require('hapi-postgres-connection');
 const server = new Hapi.Server();
 const routes = require('./route.js');
 server.connection({
@@ -37,11 +36,6 @@ server.register({
     if (err) throw err
 })
 
- server.register(pg, (err) => {
-    if (err) {
-        throw err
-    }
-});
 
 server.on('response', function (request) {
     console.log(request.info.remoteAddress + ': ' + request.method.toUpperCase() + ' ' + request.url.path + ' --> ' + request.response.statusCode);

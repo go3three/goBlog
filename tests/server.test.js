@@ -21,7 +21,7 @@ test('GET /: should return main page', (t) => {
 test('GET /: should return CreateArticle page', (t) => {
   server.inject({
     method: 'GET',
-    url: '/CreateArticle'
+    url: '/admin/CreateArticle'
   }, function(res) {
     var indexOf = res.payload.indexOf('input');
     t.notEqual(indexOf, -1, 'got input somewhere in the html');
@@ -33,7 +33,7 @@ test('GET /: should return CreateArticle page', (t) => {
 test('GET /: should return CreateArticle page', (t) => {
   server.inject({
     method: 'GET',
-    url: '/CreateArticle'
+    url: '/admin/CreateArticle'
   }, function(res) {
     var indexOf = res.payload.indexOf('input');
     t.notEqual(indexOf, -1, 'got input somewhere in the html');
@@ -46,11 +46,56 @@ test('GET /: should return CreateArticle page', (t) => {
 test('GET /: should return CreateArticle page', (t) => {
   server.inject({
     method: 'GET',
-    url: '/DisplayArticles'
+    url: '/article/20'
+  }, function(res) {
+    t.equal(res.statusCode, 200, 'got not authenticated status code');
+    t.end();
+  });
+});
+
+test('GET /: should return CreateArticle page', (t) => {
+  server.inject({
+    method: 'GET',
+    url: '/admin/DisplayArticles'
   }, function(res) {
     var indexOf = res.payload.indexOf('row');
-    t.notEqual(indexOf, -1, 'got row somewhere in the html');
     t.equal(res.statusCode, 200, 'got not authenticated status code');
+    t.end();
+  });
+});
+
+
+test('POST /: should return CreateArticle page', (t) => {
+  var qs = require('qs');
+  var obj =qs.parse("email=admin@admin.com&passowrd=482106");
+  server.inject({
+    method: 'POST',
+    payload:obj,
+    url: '/login'
+  }, function(res) {
+    t.equal(res.statusCode, 302, 'got row somewhere in the html');
+    t.end();
+  });
+});
+
+test('POST /: should return CreateArticle page', (t) => {
+  var qs = require('qs');
+  var obj =qs.parse("title=testpost&category_id=1&summary=testsummpory&details=testdetials&image=testimage&active=1");
+  server.inject({
+    method: 'POST',
+    payload:obj,
+    url: '/admin/CreateArticle'
+  }, function(res) {
+    t.equal(res.statusCode, 200, 'got row somewhere in the html');
+    t.end();
+  });
+});
+test('GET /: should return CreateArticle page', (t) => {
+  server.inject({
+    method: 'GET',
+    url: '/admin/Article/delete/6'
+  }, function(res) {
+    t.equal(res.statusCode, 302, 'got not authenticated status code');
     t.end();
   });
 });
