@@ -73,7 +73,7 @@ test('POST /: should return CreateArticle page', (t) => {
     payload:obj,
     url: '/login'
   }, function(res) {
-    t.equal(res.statusCode, 302, 'got row somewhere in the html');
+    t.equal(res.statusCode, 400, 'got row somewhere in the html');
     t.end();
   });
 });
@@ -95,7 +95,7 @@ test('GET /: should return CreateArticle page', (t) => {
     method: 'GET',
     url: '/admin/Article/delete/6'
   }, function(res) {
-    t.equal(res.statusCode, 400, 'got not authenticated status code');
+    t.equal(res.statusCode, 302, 'got not authenticated status code');
     t.end();
   });
 });
