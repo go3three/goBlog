@@ -3,8 +3,10 @@ const Hapi = require('hapi');
 require('env2')('./.env');    // loads all entries into process.env
 const handlebars = require('handlebars');
 const vision = require('vision');
+const inert = require('inert');
 const pg = require('hapi-postgres-connection');
 const server = new Hapi.Server();
+const routes = require('./route.js');
 server.connection({
     port: process.env.PORT || 3000
 });
@@ -24,7 +26,16 @@ var options = {
 server.register({
     register: require('yar'),
     options: options
-}, function (err) { });
+}, function (err) {
+
+  server.route(routes);
+
+});
+server.register({
+    register: inert
+}, function(err) {
+    if (err) throw err
+})
 
  server.register(pg, (err) => {
     if (err) {
