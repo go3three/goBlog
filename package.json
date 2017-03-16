@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "npm run db:create && npm run migrate && node ./tests/runner.js && npm run db:drop",
-    "start": "node server.js",
+    "start": "node scripts/migrate.js && node server.js",
     "db:create": "psql -c 'CREATE DATABASE test;' -U postgres -h localhost",
     "db:drop": "psql -c 'DROP DATABASE test;' -U postgres -h localhost",
     "migrate": "node scripts/migrate.js",
