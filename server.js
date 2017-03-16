@@ -1,6 +1,5 @@
 'use strict';
 const Hapi = require('hapi');
-// require('env2')('./.env');    // loads all entries into process.env
 const handlebars = require('handlebars');
 const vision = require('vision');
 const inert = require('inert');
