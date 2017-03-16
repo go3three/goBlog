@@ -9,7 +9,7 @@
     "db:create": "psql -c 'CREATE DATABASE test;' -U postgres -h localhost",
     "db:drop": "psql -c 'DROP DATABASE test;' -U postgres -h localhost",
     "migrate": "node scripts/migrate.js",
-    "cov": "npm run db:create && npm run migrate && node_modules/.bin/istanbul cover ./tests/runner.js && npm run db:drop",
+    "cov": "npm run db:create && npm run migrate && node_modules/.bin/istanbul cover ./tests/runner.jsx && npm run db:drop",
     "dev:test": "nodemon ./tests/index.js"
   },
   "repository": {
@@ -43,5 +43,9 @@
     "vision": "^4.1.1",
     "yar": "^8.1.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "codeclimate-test-reporter": "^0.4.1",
+    "shot": "^3.4.0",
+    "tape": "^4.6.3"
+  }
 }

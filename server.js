@@ -1,6 +1,6 @@
 'use strict';
 const Hapi = require('hapi');
-require('env2')('./.env');    // loads all entries into process.env
+// require('env2')('./.env');    // loads all entries into process.env
 const handlebars = require('handlebars');
 const vision = require('vision');
 const inert = require('inert');
@@ -42,6 +42,7 @@ server.register({
         throw err
     }
 });
+
 server.on('response', function (request) {
     console.log(request.info.remoteAddress + ': ' + request.method.toUpperCase() + ' ' + request.url.path + ' --> ' + request.response.statusCode);
 });

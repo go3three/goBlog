@@ -10,7 +10,7 @@ function insertData(req, res) {
     const image = req.payload.image;
     const active = req.payload.active;
 
-  
+
     console.log(active);
     const user_id = 1;
     const select = `SELECT * FROM article WHERE (title = '${title}') AND user_id ='${user_id}';`;
