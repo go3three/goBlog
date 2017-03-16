@@ -1,39 +1,112 @@
-{{!< layout/default}}
-<div class="row">
-    </div>
-    <br>
-    <table class="table table-hover table-stripped">
-        <thead>
-            <tr>
-                <th> Article title </th>
-                <th> Summary </th>
-                <th> Details </th>
-                <th> Image </th>
-                <th width="20%"> Date added </th>
-                <th width="15%"> Added by </th>
-                <th width="15%"> Edited by </th>
-                <th width="13%"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td> </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="text-right">
-                    <a class="btn btn-primary btn-xs" href="/CMS/Article/edit"><i class="glyphicon glyphicon-edit"></i></a>
-                    <a class="btn Confirm btn-danger btn-xs" href="/CMS/Article/delete/"><i class="glyphicon glyphicon-trash"></i></a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+{{!
+< layout/main_layout}} <!DOCTYPE HTML>
+	<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+	<html>
 
-    <div class="text-center">
-    </div>
-    <div class="alert alert-warning">
-        No results to display...
-    </div>
+	<head>
+		<title>Go3Blog</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="../../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="../assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="../assets/css/ie8.css" /><![endif]-->
+	</head>
+
+	<body>
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<h1><a href="#">GoBlog</a></h1>
+				<nav class="links">
+
+				</nav>
+				<nav class="main">
+					<ul>
+
+						<li class="menu">
+							<a class="fa-bars" href="#menu">Menu</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Menu -->
+			<section id="menu">
+
+				<!-- Search -->
+				<section>
+					<div class="login-panel panel panel-default">
+						<div class="panel-heading">
+							{{#if msg}}
+							<label class="alert alert-danger" role="alert" >{{msg}}</label>
+							{{/if}}
+							<h3 class="panel-title">Sign In</h3>
+						</div>
+						<div class="panel-body">
+							<form role="form" action="/login" method="post">
+								<fieldset>
+									<div class="form-group">
+										<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="">
+									</div>
+									<div class="form-group">
+										<input class="form-control" placeholder="Password" name="password" type="password" value="">
+									</div>
+									<div class="checkbox">
+									</div>
+									<!-- Change this to a button or input when using this as a form -->
+									<input type="submit" value="Login" class="btn btn-sm btn-success">
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</section>
+			</section>
+			</section>
+					{{#each result}}
+			<div id="main">
+				<article class="post">
+					<header>
+
+						<div class="title">
+							<h2><a href="#">{{this.title}}</a></h2>
+						</div>
+						<div class="meta">
+							<time class="published" >{{this.created_at}}</time>
+							<a href="#" class="author"><span class="name">admin</span><img src="../images/avatar.jpg" alt="" /></a>
+						</div>
+					</header>
+					<a href="#" class="image featured"><img src="{{this.image}}" alt="" /></a>
+					<p>{{this.summary}}</p>
+					<footer>
+						<ul class="actions">
+							<li><a href="/article/{{this.id}}" class="button big">Continue Reading</a></li>
+						</ul>
+						<ul class="stats">
+							<li><a href="#">>{{this.category_id}}</a></li>
+							<li><a href="#" class="icon fa-heart">28</a></li>
+							<li><a href="#" class="icon fa-comment">128</a></li>
+						</ul>
+					</footer>
+				</article>
+				{{/each}}
+					</div>
+				</div>
+
+				<!-- Scripts -->
+				<script src="../../assets/js/jquery.min.js"></script>
+				<script src="../../assets/js/skel.min.js"></script>
+				<script src="../../assets/js/util.js"></script>
+				<!--[if lte IE 8]><script src="../../assets/js/ie/respond.min.js"></script><![endif]-->
+				<script src="../../assets/js/main.js"></script>
+
+	</body>
+
+	</html>

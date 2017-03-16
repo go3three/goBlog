@@ -13,7 +13,20 @@ server.register(vision, (err) => {
         throw err
     }
 });
-server.register(pg, (err) => {
+var options = {
+    storeBlank: false,
+    cookieOptions: {
+        password: 'the-password-must-be-at-least-32-characters-long',
+        isSecure: true
+    }
+};
+
+server.register({
+    register: require('yar'),
+    options: options
+}, function (err) { });
+
+ server.register(pg, (err) => {
     if (err) {
         throw err
     }

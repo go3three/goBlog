@@ -27,14 +27,14 @@
                 <td>{{updated_at}}{{this.updated_at}}</td>
                 <td>{{updated_by}}{{this.updated_by}}</td>
                 <td class="text-right">
-                    <a class="btn btn-primary btn-xs" href="/CMS/Article/edit"><i class="glyphicon glyphicon-edit"></i></a>
-                    <a class="btn Confirm btn-danger btn-xs" href="/CMS/Article/delete/"><i class="glyphicon glyphicon-trash"></i></a>
+                    <a class="btn btn-primary btn-xs" href=""><i class="glyphicon glyphicon-edit"></i></a>
+                    <a class="btn Confirm btn-danger btn-xs" href="/admin/Article/delete/{{@id}}{{this.id}}"><i class="glyphicon glyphicon-trash"></i></a>
                 </td>
             </tr>
             {{/each}}
         </tbody>
     </table>
-
+{{else}}
     <div class="text-center">
     </div>
     <div class="alert alert-warning">

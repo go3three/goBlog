@@ -35,11 +35,16 @@ var selectdata = (client, query, cb) => {
 var insertdata = (client, data, cb) => {
     client.query(data, cb);
 };
+var insertadmin = (client, cb) => {
+  var finalQuery = `${sqlQueries.inser_admin}`;
+    client.query(finalQuery, cb);
+};
 
 module.exports = {
     config: config,
     createClient: createClient,
     createTable: createTable,
     insertdata: insertdata,
-    selectdata: selectdata
+    selectdata: selectdata,
+    insertadmin:insertadmin
 };

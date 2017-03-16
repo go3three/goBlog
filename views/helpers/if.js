@@ -1,8 +1,7 @@
-const Handlebars = require('handlebars');
 
-Handlebars.registerHelper('ifCond', function(v1, v2, options) {
-  if(v1 != v2) {
-    return options.fn(this);
-  }
-  return options.inverse(this);
-});
+const Handlebars=require('handlebars');
+Handlebars.registerHelper('select', function( value, options ){
+      var $el = $('<select />').html( options.fn(this) );
+      $el.find('[value="' + value + '"]').attr({'selected':'selected'});
+      return $el.html();
+  });

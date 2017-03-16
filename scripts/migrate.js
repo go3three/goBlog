@@ -11,5 +11,16 @@ db.createTable(client, function(errTable, resTable) {
   }
 
   console.log('OK: TABLE CREATED');
-  client.end();
+
 });
+db.insertadmin(client,function(err,res){
+  if(err) {
+    console.log('error while trying to create admin');
+    console.log('err',err);
+    // throw errTable;
+  }
+
+  console.log('OK: admin CREATED');
+  client.end();
+
+})
