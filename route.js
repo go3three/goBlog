@@ -5,6 +5,7 @@
   const handlebars = require('handlebars');
   const article = require('./Controllers/articles.js');
   const main = require('./Controllers/main.js');
+  const Joi = require('joi');
   const files = {
       method: 'GET',
       path: '/assets/{file*}',
@@ -37,7 +38,14 @@
       path: '/login',
       handler: function(request, reply) {
           main.login(request, reply);
-      }
+      },config: {
+        validate: {
+            payload: {
+              password: Joi.number().integer().required(),
+              email: Joi.string().email().required(),
+            }
+        }
+    }
   }
   const articleid = {
       method: 'GET',
@@ -69,7 +77,19 @@
               info: 'You Can Add Articles'
           }
           article.insertData(request, reply);
-      }
+      },config: {
+        validate: {
+            payload: {
+              title: Joi.string().required(),
+              category_id: Joi.number().integer().required(),
+              summary: Joi.string().required(),
+              details: Joi.string().required(),
+              image: Joi.string().required().regex(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/
+            ),
+              active: Joi.number(),
+            }
+        }
+    }
   }
   const ArticleDelete = {
       method: 'GET',
