@@ -6,7 +6,9 @@ const inert = require('inert');
 const server = new Hapi.Server();
 const routes = require('./route.js');
 server.connection({
-    port: process.env.PORT || 3000
+    port: process.env.PORT || 3000,
+    host:'0.0.0.0'
+
 });
 server.register(vision, (err) => {
     if (err) {
