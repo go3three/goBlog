@@ -31,7 +31,7 @@
   "dependencies": {
     "env2": "^2.1.1",
     "handlebars": "^4.0.6",
-    "hapi": "^16.1.0",
+    "hapi": "^17.0.0",
     "hapi-flash": "^1.1.1",
     "hapi-postgres-connection": "^6.1.0",
     "hoek": "^4.1.0",
@@ -41,7 +41,7 @@
     "pg": "^6.1.4",
     "url-parse": "^1.1.8",
     "vision": "^4.1.1",
-    "yar": "^8.1.2"
+    "yar": "^9.0.0"
   },
   "devDependencies": {
     "codeclimate-test-reporter": "^0.4.1",
